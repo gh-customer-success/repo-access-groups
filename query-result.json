@@ -1,0 +1,65 @@
+{
+    "data": {
+      "repository": {
+        "nameWithOwner": "Avocado-Corporation/repo-secure",
+        "collaborators": {
+          "pageInfo": {
+            "endCursor": "Y3Vyc29yOnYyOpHOAApiDw==",
+            "hasNextPage": false
+          },
+          "edges": [
+            {
+              "permission": "ADMIN",
+              "node": {
+                "isEmployee": true,
+                "login": "rudy750",
+                "name": "Rudy Sarmiento"
+              }
+            }
+          ]
+        }
+      },
+      "organization": {
+        "teams": {
+          "edges": [
+            {
+              "node": {
+                "name": "avocado security",
+                "repositories": {
+                  "edges": [
+                    {
+                      "permission": "READ",
+                      "node": {
+                        "name": "repo-secure"
+                      }
+                    },
+                    {
+                      "permission": "READ",
+                      "node": {
+                        "name": "repo-secure-example"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "node": {
+                "name": "some other team",
+                "repositories": {
+                  "edges": [
+                    {
+                      "permission": "WRITE",
+                      "node": {
+                        "name": "repo-secure"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }

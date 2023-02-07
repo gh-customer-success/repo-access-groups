@@ -1,0 +1,64 @@
+//query the github graphql api to return a list of users and teams that have access to a given repo or repos
+
+query ($owner: String!, $repo: String!, $affiliation: CollaboratorAffiliation!, $endCursor: String) {
+  repository(owner: $owner, name: $repo) {
+    nameWithOwner
+    collaborators(first: 100, affiliation: $affiliation, after: $endCursor) {
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+      edges {
+        permission
+        node {
+          isEmployee
+          login
+          name
+        }
+      }
+    }
+  }
+
+# Get the organization by its login
+
+  # Get the organization's name
+  name
+  # Get the organization's email
+  email
+  # Get the organization's website URL
+  url
+  # Get the organization's description
+  description
+  # Get the organization's avatar URL
+  avatarUrl
+  # Get the teams under the organization
+  teams {
+    # Get the first 100 teams
+    first: 100
+    # Loop through each team
+    edges {
+      node {
+        # Get the team's name
+        name
+      }
+    }
+  }
+}
+ 	       repositories(first:100, query:$repo){
+          
+           edges {
+                permission
+                node {
+                    name
+                }
+            }
+        }
+      }
+    }
+  }
+}
+}
+
+
+//variables
+{"owner": "Avocado-Corporation", "repo": "repo-secure", "affiliation":"ALL"}
